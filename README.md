@@ -14,5 +14,10 @@ Save the process to disk
 
 Restore the process
 
+----
 
 Isolate process-private memory (heap, stack, mmap, SHM segments) from kernel/system pages. CRIU/DMTCP already do this: they capture user-space VMA maps and skip kernel-owned regions (page cache, kernel stacks, I/O buffers). Design should replicate that boundary—dump only user-space mappings and relevant shared objects; exclude kernel or driver pages.
+
+----
+
+Named "Oblivion" because the system sends a running process into temporary nonexistence, an engineered void, then brings it back intact. The metaphor of suspension and return from oblivion fits the checkpoint concept rather nicely.
